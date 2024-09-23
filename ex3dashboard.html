@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Your Dashboard</h1>
+    <form action="/post" method="POST">
+        <textarea name="content" placeholder="What's happening?" required></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <h2>Posts</h2>
+    <ul id="post-list"></ul>
+
+    <a href="/logout">Logout</a>
+
+    <script>
+        fetch('/api/posts')
+            .then(response => response.json())
+            .then(posts => {
+                const postList = document.getElementById('post-list');
+                posts.forEach(post => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <p><strong>${post.userId.username}</strong>: ${post.content}</p>
+                        <form action="/like/${post._id}" method="POST">
+                            <button type="submit">Like</button> (${post.likes.length})
+                        </form>
+                        <form action="/follow/${post.userId._id}" method="POST">
+                            <button type="submit">Follow</button>
+                        </form>
+                    `;
+                    postList.appendChild(li);
+                });
+            });
+    </script>
+</body>
+</html>
