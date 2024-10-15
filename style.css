@@ -1,66 +1,77 @@
-html,
-body{
-   margin: 0;
-   font-family: 'Poppins', sans-serif;
-   background-color:#ffc0cb;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-#wrapper h2{
-    display:flex;
-    justify-content: center;
-    
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
 
-h2{
-    color:#ffeba7;
-    letter-spacing: 1px;
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
 }
-input{
+
+section {
+    background: white;
     border-radius: 5px;
-    border: 2px solid black ;
-    margin-top:30px;
-    height:2.5em;
-    width:250px;
-    padding-left:10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 45%;
 }
 
-input:active{
-    border:none;
-}
-#wrapper{
-    height:500px;
-    width:400px;
-    margin:200px auto;
-    background-color:#00796b;
-    border-radius:10px;
-    padding:30px;
+.restaurant {
+    margin-bottom: 30px;
 }
 
-button{
-    margin-top:20px;
-    background-color:#ffeba7;
-    border-radius: 4px;
-    height: 44px;
-    font-weight: 600;
-    padding: 0 30px;
-    letter-spacing: 1px;
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.menu img {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.comments {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.comment-input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.comment-btn {
+    padding: 5px 10px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
     border: none;
-    color: #102770;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
 }
 
-button:hover{
-    cursor:pointer;
-}
-#todoList{
-    color:white;
-    font-size:28px;  
-    margin-top:10px; 
-}
-
-#todoList p{
-  margin:10px 0px;
-}
-
-#todoList p:hover{
-  cursor: pointer;
+button:hover {
+    background-color: #218838;
 }
