@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background for contrast */
+}
+
+header {
+    background-color: #090909; /* Dark header */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative; /* For positioning dropdown */
+}
+
+.logo {
+    height: 80px; /* Adjust logo height */
+    margin-right: 50px;
+}
+
+h1 {
+    margin: 0;
+    flex-grow: 1;
+    font-size: 28px; /* Increase font size for better visibility */
+}
+
+.cart-container {
+    position: relative; /* To position dropdown */
+}
+
+.cart-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white; /* White cart icon color */
+}
+
+.cart-dropdown {
+    position: absolute; /* Position dropdown */
+    right: 0;
+    top: 40px; /* Adjust based on header height */
+    background-color: #000000; /* Dropdown background color */
+    border: 1px solid #0f0f0f; /* Match border color with header */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it is above other elements */
+    padding: 10px;
+    width: 250px; /* Width of the dropdown */
+    display: none; /* Hide by default */
+}
+
+.cart-dropdown h3 {
+    margin: 0 0 10px;
+    color: #fff; /* White text for dropdown header */
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* Limit height of cart */
+    overflow-y: auto; /* Enable scrolling */
+}
+
+#cart-items li {
+    padding: 5px 0; /* Spacing between items */
+    border-bottom: 1px solid #0f0f0f; /* Divider between items */
+    color: #ffffff; /* White text for cart items */
+}
+
+#total-price {
+    font-weight: bold;
+    margin-top: 10px; /* Spacing above total */
+    color: #ffffff; /* Color for total price */
+}
+
+.restaurant-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px; /* Margin around the grid */
+}
+
+.restaurant {
+    border: 1px solid #0f0f0f; /* Dark border for restaurant cards */
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 30%; /* Width of restaurant cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Dark background for restaurant cards */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+.restaurant:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.restaurant img {
+    width: 100%; /* Make image fill the container */
+    height: 100%; /* Maintain aspect ratio */
+    max-height: 350px; /* Reduced maximum height for images */
+    border-radius: 8px;
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.rating, .menu-rating {
+    font-size: 14px;
+    color: #FFD700; /* Golden color for ratings */
+}
+
+.menu-image {
+    width: 60px; /* Width for menu images */
+    height: 60px; /* Height for menu images */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between image and text */
+    vertical-align: middle; /* Align images vertically with text */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+}
+
+.menu-description {
+    font-size: 12px;
+    color: #ffffff; /* Lighter gray for menu description */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #090909; /* Dark footer */
+    color: white;
+}
