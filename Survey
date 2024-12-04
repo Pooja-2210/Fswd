@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(SurveyApp());
+
+class SurveyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Survey App',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: SurveyHome(),
+    );
+  }
+}
+
+class SurveyHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Online Survey')),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navigate to survey screen
+          },
+          child: Text('Start Survey'),
+        ),
+      ),
+    );
+  }
+}
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+
+app.use(bodyParser.json());
+
+// Store survey questions and responses in memory for simplicity
+let surveyQuestions = [
+  { id: 1, question: "What is your favorite color?" },
+];
+let responses = [];
+
+// API to get survey questions
+app.get('/questions', (req, res) => {
+  res.json(surveyQuestions);
+});
+
+// API to submit a response
+app.post('/responses', (req, res) => {
+  const { questionId, answer } = req.body;
+  responses.push({ questionId, answer });
+  res.status(200).send('Response recorded');
+});
+
+// Start server
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+import matplotlib.pyplot as plt
+from collections import Counter
+
+# Sample responses
+responses = ["Blue", "Red", "Blue", "Green", "Red", "Blue"]
+
+# Generate report
+def generate_report(responses):
+    counts = Counter(responses)
+    colors = list(counts.keys())
+    votes = list(counts.values())
+
+    plt.bar(colors, votes, color='skyblue')
+    plt.title("Survey Results")
+    plt.xlabel("Options")
+    plt.ylabel("Votes")
+    plt.savefig("survey_report.png")
+    print("Report generated as survey_report.png")
+
+generate_report(responses)
